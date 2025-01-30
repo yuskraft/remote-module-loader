@@ -6,7 +6,6 @@ This package allows you to dynamically load remote components in your React appl
 ## Table of Contents
 
 - [Remote Module Loader](#remote-module-loader)
-  - [Table of Contents](#table-of-contents)
   - [Installation](#installation)
   - [Usage](#usage)
     - [`useLoadRemote(config: RemoteConfig): UseRemoteLoaderResult`](#useloadremoteconfig-remoteconfig-useremoteloaderresult)
