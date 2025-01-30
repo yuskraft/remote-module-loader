@@ -1,5 +1,5 @@
 {
-  "name": "remote-module-loader",
+  "name": "@yuskraft/remote-module-loader",
   "version": "1.0.0",
   "description": "A React hook for loading remote modules in Module Federation",
   "main": "dist/index.js",

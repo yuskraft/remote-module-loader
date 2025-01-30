@@ -1,45 +1,40 @@
 import * as React from "react";
 
-export interface RemoteConfig {
+export interface IRemoteModuleProps {
   url: string;
   scope: string;
   module: string;
-}
-
-export interface UseRemoteLoaderResult {
-  Component: React.LazyExoticComponent<any> | null;
-  ready: boolean;
-  hasError: boolean;
 }
 
 declare global {
   interface Window {
     [key: string]: any;
     __webpack_init_sharing__: (scope: string) => Promise<void>;
-    __webpack_share_scopes__: { default: any };
+    __webpack_share_scopes__: { default: unknown };
   }
 }
 
 function loadComponent(scope: string, module: string) {
   return async () => {
-    await window.__webpack_init_sharing__("default");
+    // @ts-ignore
+    __webpack_init_sharing__("default");
+
+    // @ts-ignore
+    console.log("Webpack share scopes:", __webpack_share_scopes__);
+    console.log("Remote container:", window[scope]);
 
     const container = window[scope];
-    await container.init(window.__webpack_share_scopes__.default);
-
-    const factory = await container.get(module);
+    // @ts-ignore
+    await container.init(__webpack_share_scopes__.default);
+    const factory = await window[scope].get(module);
     const Module = factory();
     return Module;
   };
 }
 
-const useLoadRemote = ({
-  url,
-  scope,
-  module,
-}: RemoteConfig): UseRemoteLoaderResult => {
-  const [ready, setReady] = React.useState<boolean>(false);
-  const [failed, setFailed] = React.useState<boolean>(false);
+const useLoadRemote = ({ url, scope, module }: IRemoteModuleProps) => {
+  const [ready, setReady] = React.useState(false);
+  const [failed, setFailed] = React.useState(false);
   const [Component, setComponent] =
     React.useState<React.LazyExoticComponent<any> | null>(null);
 
@@ -59,6 +54,12 @@ const useLoadRemote = ({
     element.onload = async () => {
       try {
         if (!isMounted) return;
+
+        if (!window[scope]) {
+          throw new Error(
+            `Remote entry for ${scope} is not available after loading script.`
+          );
+        }
 
         setReady(true);
         const load = loadComponent(scope, module);

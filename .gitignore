@@ -1,4 +1,6 @@
 /node_modules
+/demo/host/node_modules
+/demo/remote/node_modules
 
 /dist
 /build
