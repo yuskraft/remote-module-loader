@@ -1,0 +1,30 @@
+{
+  "name": "remote-module-loader",
+  "version": "1.0.0",
+  "description": "A React hook for loading remote modules in Module Federation",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "prepare": "npm run build"
+  },
+  "keywords": [
+    "react",
+    "module-federation",
+    "webpack",
+    "remote-modules",
+    "typescript"
+  ],
+  "peerDependencies": {
+    "react": ">=16.8.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.0",
+    "typescript": "^5.0.0",
+    "react": "^18.2.0"
+  },
+  "license": "MIT"
+} 
