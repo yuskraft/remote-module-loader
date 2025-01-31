@@ -5,10 +5,9 @@
     "start": "webpack serve"
   },
   "dependencies": {
-    "@yuskraft/remote-module-loader": "^1.0.0",
+    "@yuskraft/remote-module-loader": "^1.0.2",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "remote-module-loader": "file:../.."
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.0",
