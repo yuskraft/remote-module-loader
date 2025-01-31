@@ -3,9 +3,12 @@
 A badass React hook for loading remote modules dynamically.
 This package allows you to dynamically load remote components in your React application using Webpack's Module Federation.
 
+[![GitHub Repository](https://img.shields.io/badge/GitHub-Repository-blue.svg)](https://github.com/yuskraft/remote-module-loader)
+
 ## Table of Contents
 
 - [Remote Module Loader](#remote-module-loader)
+  - [Table of Contents](#table-of-contents)
   - [Installation](#installation)
   - [Usage](#usage)
     - [`useLoadRemote(config: RemoteConfig): UseRemoteLoaderResult`](#useloadremoteconfig-remoteconfig-useremoteloaderresult)
@@ -15,13 +18,13 @@ This package allows you to dynamically load remote components in your React appl
 
 To install the package, use npm or yarn:
 ```bash
-npm install remote-module-loader
+npm install @yuskraft/remote-module-loader
 ```
 
 or
 
 ```bash
-yarn add remote-module-loader
+yarn add @yuskraft/remote-module-loader
 ```
 
 ## Usage
@@ -29,7 +32,7 @@ yarn add remote-module-loader
 Import the `useLoadRemote` hook and use it in your React component to load remote modules.
 
 ```typescript
-import { useLoadRemote } from 'remote-module-loader';
+import { useLoadRemote } from '@yuskraft/remote-module-loader';
 
 const MyComponent = () => {
   const { Component, ready, hasError } = useLoadRemote({

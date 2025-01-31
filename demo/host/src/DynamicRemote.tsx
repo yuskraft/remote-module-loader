@@ -1,5 +1,5 @@
 import React, { Suspense } from "react";
-import { useLoadRemote } from "../../../dist";
+import { useLoadRemote } from "@yuskraft/remote-module-loader";
 
 export const DynamicRemote = () => {
   const { Component, ready, hasError } = useLoadRemote({
