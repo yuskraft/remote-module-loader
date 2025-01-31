@@ -29,6 +29,8 @@ yarn add @yuskraft/remote-module-loader
 
 ## Usage
 
+For a detailed usage example, check out our [demo application](https://github.com/yuskraft/remote-module-loader/tree/main/demo).
+
 Import the `useLoadRemote` hook and use it in your React component to load remote modules.
 
 ```typescript
