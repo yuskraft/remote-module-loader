@@ -5,6 +5,10 @@ This package allows you to dynamically load remote components in your React appl
 
 [![GitHub Repository](https://img.shields.io/badge/GitHub-Repository-blue.svg)](https://github.com/yuskraft/remote-module-loader)
 
+
+https://github.com/user-attachments/assets/ab4102d0-9ebe-46db-85a0-3f0b7931a180
+
+
 ## Table of Contents
 
 - [Remote Module Loader](#remote-module-loader)
